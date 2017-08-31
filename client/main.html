@@ -1,0 +1,56 @@
+
+<body>
+<div class="container">
+    <header>
+        <h1>Gif Maker Test</h1>
+    </header>
+    <div>
+        <div>
+            <div id="dropDiv" ondrop="" ondragover=""><span>Drag and <em>Drop</em> here</span></div>
+            <br>
+        </div>
+        <div >
+                {{> gifmaker }}
+        </div>
+        <!--<div>-->
+        <!--2.&nbsp;{{> gifmaker }}-->
+        <!--</div>-->
+        <!--<div>-->
+        <!--3.&nbsp;{{> gifmaker }}-->
+        <!--</div>-->
+        <!--<div>-->
+        <!--4.&nbsp;{{> gifmaker }}-->
+        <!--</div>-->
+        <!--<div>-->
+        <!--5.&nbsp;{{> gifmaker }}-->
+        <!--</div>-->
+        <br>
+        <div>
+            <input type="number" placeholder="milliseconds" />
+        </div>
+        <br>
+        <div>
+            <button>Submit</button>
+        </div>
+
+    </div>
+    <!--<div>-->
+        {{> images}}
+    </div>
+
+</body>
+<template name="gifmaker" >
+        <input type=file multiple accept="image/*" disabled="{{#if disableFileSelection}}disabled{{/if}}" />
+</template>
+
+<template name="images">
+    <span>
+    {{#each images}}
+        {{> imgviewer}}
+    {{/each}}
+    </span>
+</template>
+
+<template name="imgviewer">
+    <img class="img-thumb" src={{src}} >
+</template>

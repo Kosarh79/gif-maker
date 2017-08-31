@@ -1,0 +1,7 @@
+/* CSS declarations go here */
+.img-thumb{
+    display:inline-block;
+   /* margin-right:1em;*/
+    padding:1em;
+    width:8em;
+}
