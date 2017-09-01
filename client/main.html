@@ -11,7 +11,7 @@
             {{> gifmaker }}
             <input type="number" class="form-control input-number" placeholder="milliseconds"/>
             <button class="btn btn-default">Submit</button>
-            {{> messages}}
+            {{> message}}
         </div>
     </article>
 </div>
@@ -24,12 +24,12 @@
         <input type="file" class="form-control" multiple accept="image/*"
                disabled="{{#if disableFileSelection}}disabled{{/if}}"/>
     </label>
-    <p id="upload" class="hidden">
-        <label>Drag & drop not supported, but you can still upload via this input field:<br>
-        </label></p>
-    <p id="filereader">File API & FileReader API not supported</p>
-    <p id="formdata">XHR2's FormData is not supported</p>
-    <p id="progress">XHR2's upload progress isn't supported</p>
+    <!--<p id="upload" class="hidden">-->
+        <!--<label>Drag & drop not supported, but you can still upload via this input field:<br>-->
+        <!--</label></p>-->
+    <!--<p id="filereader">File API & FileReader API not supported</p>-->
+    <!--<p id="formdata">XHR2's FormData is not supported</p>-->
+    <!--<p id="progress">XHR2's upload progress isn't supported</p>-->
 
 </template>
 
@@ -42,14 +42,9 @@
 <template name="imgviewer">
     <img class="img-thumb" src={{src}}>
 </template>
-<template name="messages">
-    {{#each messages}}
-        {{> message}}
-    {{/each}}
-</template>
 
 <template name="message">
-    <div class="message {{#if error}}warning{{else}}info{{/if}}">
-        {{message}}
+    <div class="message {{#if message.error}}warning{{else}}info{{/if}}">
+        {{message.message}}
     </div>
 </template>

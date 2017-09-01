@@ -8,14 +8,14 @@ export const helper = {
         let maxAllowedFiles = Session.get('maxAllowedFiles');
         //add the message either error or info to session
         let addMessage = (message, messageType) => {
-            let messages = Session.get('messages');
+            //let messages = Session.get('messages');
             message = {
                 message: message,
                 error: messageType==='error',
                 info: messageType==='info',
             };
-            messages.push(message);
-            Session.set('messages', messages);
+          //  messages.push(message);
+            Session.set('message', message);
         };
         let checkFileNumbers = (files)=>{
             if (addedFiles.length === maxAllowedFiles) {
@@ -25,7 +25,7 @@ export const helper = {
                 let _files = Array.from(files).slice(0);
                 let capacity = maxAllowedFiles - addedFiles;
                 if(_files.length > capacity){
-                    _files.splice(0, capacity)
+                    _files = _files.splice(0, capacity);
                 }
                 return _files;
             }
@@ -39,6 +39,7 @@ export const helper = {
         }
         //loop through selected files, read them and add them to Session
         _.each(files, (blob) => {
+            let notAcceptablefilesNames='';
             gifMaker.saveFile(blob, (err, src) => {
                 if (!err) {
                     addedFiles.push({src});
@@ -51,9 +52,12 @@ export const helper = {
                     }
                 }
                 else {
-                    addMessage(`${blob.name} is not an acceptable image! Sorry!`, 'error');
+                    notAcceptablefilesNames += blob.name + ', ';
                 }
-            })
+            });
+            if(notAcceptablefilesNames){
+                addMessage(`${notAcceptablefilesNames} not acceptable! Sorry!`, 'error');
+            }
         });
     }
 };
