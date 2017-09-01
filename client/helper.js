@@ -1,8 +1,8 @@
 import { Session } from 'meteor/session';
 import { gifMaker } from "meteor/meteor-gifmaker";
 export const helper = {
-    handleFileAdd:(ev)=>{
-        _.each(ev.target.files, (blob) => {
+    handleFileAdd:(files)=>{
+        _.each(files, (blob) => {
             gifMaker.saveFile(blob, (err, src)=>{
                 if(!err){
                     let files = Session.get('files');

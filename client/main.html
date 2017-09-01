@@ -1,46 +1,58 @@
 
 <body>
 <div class="container">
-    <header>
-        <h1>Gif Maker Test</h1>
+    <header class="row">
+        <div class="col-xs-8 col-xs-offset-2">
+            <h1>Gif Maker Test</h1>
+        </div>
+
     </header>
-    <div>
-        <div>
-            <div id="dropDiv" ondrop="" ondragover=""><span>Drag and <em>Drop</em> here</span></div>
-            <br>
-        </div>
-        <div >
+    <div class="row">
+        <div class="col-xs-8 col-xs-offset-2">
+            <div id="dropDiv" ondrop="" ondragover=""></div>
+            <div >
                 {{> gifmaker }}
+            </div>
         </div>
-        <!--<div>-->
-        <!--2.&nbsp;{{> gifmaker }}-->
+
+    </div>
+    <!--<div class="row">-->
+        <!--<div class="col-xs-8 col-xs-offset-2">-->
+        <!--{{> images}}-->
         <!--</div>-->
-        <!--<div>-->
-        <!--3.&nbsp;{{> gifmaker }}-->
-        <!--</div>-->
-        <!--<div>-->
-        <!--4.&nbsp;{{> gifmaker }}-->
-        <!--</div>-->
-        <!--<div>-->
-        <!--5.&nbsp;{{> gifmaker }}-->
-        <!--</div>-->
-        <br>
+    <!--</div>-->
+    <div class="row">
+        <div class="col-xs-8 col-xs-offset-2">
         <div>
             <input type="number" placeholder="milliseconds" />
         </div>
-        <br>
         <div>
             <button>Submit</button>
         </div>
-
+        </div>
     </div>
-    <!--<div>-->
-        {{> images}}
-    </div>
-
+</div>
 </body>
 <template name="gifmaker" >
-        <input type=file multiple accept="image/*" disabled="{{#if disableFileSelection}}disabled{{/if}}" />
+    <div id="holder"><span class="holder-text">Drag and drop images here</span>
+        {{> images}}
+        </div>
+    <label class="btn btn-default input-file">
+        <input type="file"  multiple accept="image/*" hidden="hidden" />
+    </label>
+        <p id="upload" class="hidden">
+            <label>Drag & drop not supported, but you can still upload via this input field:<br>
+           </label></p>
+        <p id="filereader">File API & FileReader API not supported</p>
+        <p id="formdata">XHR2's FormData is not supported</p>
+        <p id="progress">XHR2's upload progress isn't supported</p>
+        <!--<p>Upload progress: <progress id="uploadprogress" max="100" value="0">0</progress></p>-->
+        <!--<p>Drag an image from your desktop on to the drop zone above to see the browser both render the preview, but also upload automatically to this server.</p>-->
+
+
+    <!--<label class="btn-file">Drag and drop images here</label>-->
+        <!--<input class="btn-file-input" type=file multiple accept="image/*"-->
+               <!--disabled="{{#if disableFileSelection}}disabled{{/if}}" />-->
 </template>
 
 <template name="images">

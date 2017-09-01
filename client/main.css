@@ -5,3 +5,42 @@
     padding:1em;
     width:8em;
 }
+#holder {
+    border: 1px dashed #858181;
+    border-bottom: none;
+    width: 100%;
+    min-height: 7em;
+    margin: 1em 0 0 0;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    background-color: #094578;
+}
+.holder-text{
+    flex: 0;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color:#ffffff;
+}
+.btn-default.input-file{
+    margin: 0 0 1em 0;
+    width:100%;
+    border: 1px dashed #0c0c0c;
+    border-top: none;
+    padding: 0.7em;
+}
+#holder.hover {
+    border: 3px dashed #efebd5;
+}
+#holder img {
+    margin: 10px auto;
+    position: relative;
+    flex: 0 0 auto;
+}
+#holder p { margin: 10px; font-size: 14px; }
+progress { width: 100%; }
+progress:after { content: '%'; }
+.fail { background: #c00; padding: 2px; color: #fff; }
+.hidden { display: none !important;}
