@@ -13,7 +13,7 @@ Fork, Clone or download the ZIP
 
 ## Install dependencies
 ```range
-meteor npm install
+meteor npm install --save
 ```
  ## Run
  ```range
@@ -26,8 +26,20 @@ View it at http://localhost:3000/
  
  ```
  ## Test
+ 
+ 1- To test the application go to the root
+ 1-1- To run test in the browser
  ```range
- meteor test
+ meteor test --driver-package dispatch:mocha-browser
+ ```
+ 2-2- to run tests in the console
+ ```range
+ meteor test --once --driver-package dispatch:mocha-phantomjs
+ ```
+ 2- To test the meteor-gifmaker package
+ ```range
+ cd packages/meteor-gifmaker
+ meteor test test-packages ./
 ```
 ## Live Demo
 

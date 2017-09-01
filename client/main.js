@@ -1,25 +1,16 @@
 import { Template } from 'meteor/templating';
 import { ReactiveVar } from 'meteor/reactive-var';
-import { saveFile } from "meteor/meteor-gifmaker";
+import {helper} from './helper';
 import './main.html';
 import { Session } from 'meteor/session';
+
 Session.set('files', []);
+Session.set('errors', []);
 Session.set('disableFileSelection', false);
 
 Template.gifmaker.events({
     'change input': (ev) =>{
-        _.each(ev.target.files, (blob) => {
-            saveFile(blob, (err, src)=>{
-                if(!err){
-                    let files = Session.get('files');
-                    files.push({src});
-                    Session.set('files', files);
-                    if(files.length === 2){
-                        Session.set('disableFileSelection', true);
-                    }
-                }
-            })
-        });
+        helper.handleFileAdd(ev);
     }
 });
 
