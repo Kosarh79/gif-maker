@@ -1,22 +1,21 @@
 import {Session} from 'meteor/session';
 import {gifMaker} from "meteor/meteor-gifmaker";
+//add the message either error or info to session
+let addMessage = (message, messageType) => {
+    //let messages = Session.get('messages');
+    message = {
+        message: message,
+        error: messageType==='error',
+        info: messageType==='info',
+    };
+    //  messages.push(message);
+    Session.set('message', message);
+};
 export const helper = {
-
     handleFileAdd: (files) => {
         let addedFiles = Session.get('files');
         //number of allowed files to be added
         let maxAllowedFiles = Session.get('maxAllowedFiles');
-        //add the message either error or info to session
-        let addMessage = (message, messageType) => {
-            //let messages = Session.get('messages');
-            message = {
-                message: message,
-                error: messageType==='error',
-                info: messageType==='info',
-            };
-          //  messages.push(message);
-            Session.set('message', message);
-        };
         let checkFileNumbers = (files)=>{
             if (addedFiles.length === maxAllowedFiles) {
                 return [];
@@ -46,7 +45,7 @@ export const helper = {
                     Session.set('files', addedFiles);
                     //check number of allowed files
                     if (addedFiles.length === maxAllowedFiles) {
-                        addMessage(`Great! you added all allowed files. Please hit submit to receive your gif!`,
+                        addMessage(`Great! you added all allowed files. Please hit Animate to receive your gif!`,
                             'info');
                         Session.set('disableFileSelection', true);
                     }
@@ -57,6 +56,17 @@ export const helper = {
             });
             if(notAcceptablefilesNames){
                 addMessage(`${notAcceptablefilesNames} not acceptable! Sorry!`, 'error');
+            }
+        });
+    },
+
+    animate:(files, duration, width)=>{
+        gifMaker.animate(files, duration, width, (err, gif)=>{
+            if(!err) {
+                Session.set('gif', gif);
+            }
+            else {
+                addMessage('Sorry! Something went wrong. Please try again!', 'error');
             }
         });
     }

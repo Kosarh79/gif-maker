@@ -9,9 +9,14 @@
     <article class="row">
         <div class="col-xs-12">
             {{> gifmaker }}
-            <input type="number" class="form-control input-number" placeholder="milliseconds"/>
-            <button class="btn btn-default">Submit</button>
+            <input type="number" id="duration" min="10" max="1000" class="form-control input-number" placeholder="milliseconds"/>
+            <button class="btn btn-primary" id="animate">Animate</button>
             {{> message}}
+        </div>
+    </article>
+    <article class="row">
+        <div class="col-xs-12">
+            {{> gifviewer}}
         </div>
     </article>
 </div>
@@ -24,13 +29,6 @@
         <input type="file" class="form-control" multiple accept="image/*"
                disabled="{{#if disableFileSelection}}disabled{{/if}}"/>
     </label>
-    <!--<p id="upload" class="hidden">-->
-        <!--<label>Drag & drop not supported, but you can still upload via this input field:<br>-->
-        <!--</label></p>-->
-    <!--<p id="filereader">File API & FileReader API not supported</p>-->
-    <!--<p id="formdata">XHR2's FormData is not supported</p>-->
-    <!--<p id="progress">XHR2's upload progress isn't supported</p>-->
-
 </template>
 
 <template name="images">
@@ -41,6 +39,9 @@
 
 <template name="imgviewer">
     <img class="img-thumb" src={{src}}>
+</template>
+<template name="gifviewer">
+    <img class="img-final" src={{gif}}>
 </template>
 
 <template name="message">

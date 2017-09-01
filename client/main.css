@@ -67,3 +67,8 @@ progress:after { content: '%'; }
 .warning{
     color:red;
 }
+.img-final{
+    width:100%;
+    height:auto;
+
+}

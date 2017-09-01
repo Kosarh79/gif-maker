@@ -21,7 +21,6 @@ describe('meteor gif-maker', function () {
     });
 
     it('should return an error from saveFile', function () {
-
        let ev = {
            target:{
                files:[
