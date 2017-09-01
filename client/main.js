@@ -3,7 +3,8 @@ import {helper} from './helper';
 import './main.html';
 import {Session} from 'meteor/session';
 
-Session.set('maxAllowedFiles', 2);
+//number of allowed filed to be selected is 5
+Session.set('maxAllowedFiles', 5);
 Session.set('files', []);
 Session.set('message', {});
 Session.set('disableFileSelection', false);
@@ -28,6 +29,12 @@ Template.gifmaker.onRendered(function () {
         let duration = Number(durationElem.value) || 20;
         let files = Session.get('files');
         helper.animate(files, duration, '700');
+    };
+
+    let download = document.getElementById('downloadBtn');
+    download.onclick = ()=>{
+        let gif = Session.get('gif');
+        require("downloadjs")(gif, 'image.gif', 'image/gif');
     }
 });
 
@@ -57,3 +64,8 @@ Template.message.helpers({
         return Session.get('message');
     }
 });
+// Template.download.helpers({
+//     src: () => {
+//         return Session.get('gif');
+//     }
+// });

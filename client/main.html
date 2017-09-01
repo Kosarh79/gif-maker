@@ -9,8 +9,12 @@
     <article class="row">
         <div class="col-xs-12">
             {{> gifmaker }}
-            <input type="number" id="duration" min="10" max="1000" class="form-control input-number" placeholder="milliseconds"/>
+            <input type="number" id="duration" min="10" max="1000" class="form-control input-number"
+                   placeholder="milliseconds"/>
             <button class="btn btn-primary" id="animate">Animate</button>
+            <!--{{#if gif}}-->
+                <button class="btn btn-success" id="downloadBtn">Download</button>
+            <!--{{/if}}-->
             {{> message}}
         </div>
     </article>
@@ -49,3 +53,7 @@
         {{message.message}}
     </div>
 </template>
+
+<!--<template name="download">-->
+    <!--<a href="{{src}}">Download</a>-->
+<!--</template>-->

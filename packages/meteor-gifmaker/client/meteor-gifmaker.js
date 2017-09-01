@@ -20,8 +20,7 @@ export const gifMaker = {
     animate: (files, duration, width, callback) => {
         gifshot.createGIF({
             'images': files,
-            'gifWidth':width,
-            'gifHeight':width,
+            'gifWidth':700,
             'frameDuration':duration
         },function(obj) {
             if(typeof callback === 'function'){
