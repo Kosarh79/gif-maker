@@ -4,36 +4,36 @@
 Generates an animated gif file from user's uploaded images all in the front end
 
 ## Prerequisite
-    You need to install Meteor to build and run the app
+   You need to install Meteor to build and run the app
     https://www.meteor.com/install
 
-
-### To Run, build and test
-Fork, Clone or download the ZIP
+## How to get the source code
+Fork, clone or download the ZIP
 
 ## Install dependencies
 ```range
 meteor npm install --save
 ```
- ## Run
+## Run
  ```range
  meteor
 ```
 View it at http://localhost:3000/
 
- ## Test
+## Test
  Note: In order to run tests, make sure to run console as administrator.
 
- 1- To test the application go to the root
- 1-1- To run test in the browser
+### 1- To test the application go to the root
+
+#### 1-1- To run tests in the browser
  ```range
  meteor test --driver-package dispatch:mocha-browser
  ```
- 2-2- to run tests in the console
+#### 1-2- to run tests in the console
  ```range
  meteor test --once --driver-package dispatch:mocha-phantomjs
  ```
- 2- To test the meteor-gifmaker package
+### 2- To test the meteor-gifmaker package
  ```range
  cd packages/meteor-gifmaker
  meteor test-packages ./ --driver-package practicalmeteor:mocha
