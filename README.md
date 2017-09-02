@@ -22,8 +22,8 @@ meteor npm install --save
 View it at http://localhost:3000/
 
  ## Test
- Note: In order to run tests in make sure to run console as administrator
- 
+ Note: In order to run tests, make sure to run console as administrator.
+
  1- To test the application go to the root
  1-1- To run test in the browser
  ```range
