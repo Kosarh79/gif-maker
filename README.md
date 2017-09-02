@@ -1,7 +1,7 @@
-# Gif Maker
+# Gif Maker app
 
 ## Description
-Generates a gif file from user's uploaded images
+Generates an animated gif file from user's uploaded images all in the front end
 
 ## Prerequisite
     You need to install Meteor to build and run the app
@@ -21,10 +21,6 @@ meteor npm install --save
 ```
 View it at http://localhost:3000/
 
-## Build
-```range
- 
- ```
  ## Test
  
  1- To test the application go to the root
@@ -48,4 +44,4 @@ Tested in the following browsers/versions:
 * Internet Explorer 11.0+
 * Firefox 40.0+
 ##TODO
-gifshot.min.js is being used by meteor-gifmaker package, however it is stored in client/compatibility of the app. There should be away found to add it to the package.
+gifshot.min.js is being used by meteor-gifmaker package, however it is stored in client/compatibility of the app. There should be a away found to add it to the package.
