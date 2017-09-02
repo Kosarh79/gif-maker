@@ -45,4 +45,4 @@ Tested in the following browsers/versions:
 * Firefox 40.0+
 
 ## TODO
-gifshot.min.js is being used by meteor-gifmaker package, however it is stored in client/compatibility of the app. There should be a away found to add it to the package.
+gifshot.min.js in the client/compatibility directory of this app is being used by meteor-gifmaker package. Find a way to add it to the package.
