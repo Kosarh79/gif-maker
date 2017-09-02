@@ -21,5 +21,5 @@ meteor npm install --save
  meteor test-packages ./ --driver-package practicalmeteor:mocha
 ```
 
-##TODO
+## TODO
 gifshot.min.js being used by this package, however  is stored in client/compatibility of the actual app using this package. There should be a away found to add it to the package.
