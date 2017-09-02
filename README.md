@@ -39,13 +39,13 @@ View it at http://localhost:3000/
  2- To test the meteor-gifmaker package
  ```range
  cd packages/meteor-gifmaker
- meteor test test-packages ./
+ meteor test-packages ./ --driver-package practicalmeteor:mocha
 ```
-## Live Demo
-
 
 ## Browser Compatibility
 Tested in the following browsers/versions:
 * Google Chrome 50.0+
 * Internet Explorer 11.0+
 * Firefox 40.0+
+##TODO
+gifshot.min.js is being used by meteor-gifmaker package, however it is stored in client/compatibility of the app. There should be away found to add it to the package.

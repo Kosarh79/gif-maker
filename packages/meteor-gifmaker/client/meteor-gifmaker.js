@@ -1,8 +1,12 @@
 
 export const gifMaker = {
-    saveFile: (blob, callback) => {
+    //get the blub, do type checking and returns data url of the file
+    readFile: (blob, callback) => {
         //acceptable image types
-        let imgMimeType = ['image/jpg', 'image/jpeg', 'image/bmp', 'image/tiff-fx', 'image/gif', 'image/png', 'image/tiff', 'application/postscript', 'application/eps', 'application/x-eps', 'image/eps', 'image/x-eps'];
+        let imgMimeType = ['image/jpg', 'image/jpeg', 'image/bmp',
+            'image/tiff-fx', 'image/gif', 'image/png', 'image/tiff',
+            'application/postscript', 'application/eps',
+            'application/x-eps', 'image/eps', 'image/x-eps'];
         let fileReader = new FileReader();
         fileReader.onload = () => {
             if (typeof callback === 'function') {
@@ -18,14 +22,21 @@ export const gifMaker = {
         }
     },
     animate: (files, duration, width, callback) => {
+        if(typeof callback !== 'function'){
+            throw new Error('callback is not a function');
+        }
+        if(!files || files.length === 0){
+            callback('Error! No files!');
+            return;
+        }
+        duration = duration || 5;
+        width = width || 500;
         gifshot.createGIF({
             'images': files,
-            'gifWidth':700,
+            'gifWidth':width,
             'frameDuration':duration
         },function(obj) {
-            if(typeof callback === 'function'){
-                callback(obj.error, obj.image);
-            }
+            callback(obj.error, obj.image);
         });
     }
 };

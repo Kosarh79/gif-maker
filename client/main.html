@@ -11,15 +11,13 @@
             {{> gifmaker }}
             <input type="number" id="duration" min="10" max="1000" class="form-control input-number"
                    placeholder="milliseconds"/>
-            <button class="btn btn-primary" id="animate">Animate</button>
-            <!--{{#if gif}}-->
-                <button class="btn btn-success" id="downloadBtn">Download</button>
-            <!--{{/if}}-->
+            {{> animate}}
+            {{> download}}
             {{> message}}
         </div>
     </article>
     <article class="row">
-        <div class="col-xs-12">
+        <div class="col-xs-12 gifviewer">
             {{> gifviewer}}
         </div>
     </article>
@@ -54,6 +52,14 @@
     </div>
 </template>
 
-<!--<template name="download">-->
-    <!--<a href="{{src}}">Download</a>-->
-<!--</template>-->
+<template name="animate">
+    <button class="btn btn-primary">
+        {{#if animating}}Sit back! Animating...{{else}}Animate{{/if}}
+    </button>
+</template>
+
+<template name="download">
+    {{#if show}}
+        <button class="btn btn-success" id="downloadBtn">Download</button>
+    {{/if}}
+</template>

@@ -2,7 +2,7 @@ Package.describe({
     name: 'meteor-gifmaker',
     version: '0.0.1',
     // Brief, one-line summary of the package.
-    summary: '',
+    summary: 'return data url for an image and create gif of images',
     // URL to the Git repository containing the source code for this package.
     git: '',
     // By default, Meteor will default to using README.md for documentation.
@@ -13,16 +13,11 @@ Package.describe({
 Package.onUse(function (api) {
     api.versionsFrom('1.5.1');
     api.use('ecmascript');
-  // api.addFiles(['client/compatibility/gifshot.min.js'], 'client');
-   // api.addFiles('client/meteor-gifmaker.js', 'client');
-
-    api.mainModule('client/meteor-gifmaker.js');
+    api.mainModule('client/meteor-gifmaker.js', 'client');
 });
 
 Package.onTest(function (api) {
     api.use('ecmascript');
-    api.use('tinytest');
     api.use('meteor-gifmaker');
-    api.addFiles('client/filereader.js', 'client');
-    api.mainModule('client/meteor-gifmaker.tests.js');
+    api.mainModule('client/meteor-gifmaker.tests.js', 'client');
 });

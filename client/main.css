@@ -1,13 +1,15 @@
 
-body{
-    font-family:'Open Sans', sans-serif;
+body {
+    font-family: 'Open Sans', sans-serif;
     font-size: 14px;
-    margin:0;
+    margin: 0;
     line-height: 1.34;
 }
-header{
+
+header {
     color: #4f5152;
 }
+
 #holder {
     border: 0.1em dashed #858181;
     border-bottom: none;
@@ -18,12 +20,14 @@ header{
     position: relative;
     text-align: left;
     background-color: #094578;
-    padding:1em;
-    font-size:1.2em;
+    padding: 1em;
+    font-size: 1.2em;
 }
+
 #holder.hover {
     border: 0.3em dashed #efebd5;
 }
+
 #holder img {
     margin: 1em;
     position: relative;
@@ -31,44 +35,69 @@ header{
     max-width: 12em;
     max-height: 12em;
 }
+
 #holder p {
     margin: 1em;
 }
-.holder-text{
+
+.holder-text {
     flex: 0;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color:#ffffff;
+    color: #ffffff;
 }
-.btn-default.input-file{
+
+.btn-default.input-file {
     margin: 0 0 1em 0;
-    width:100%;
+    width: 100%;
     border: 0.1em dashed #0c0c0c;
     border-top: none;
     padding: 0.7em;
 }
 
-progress { width: 100%; }
-progress:after { content: '%'; }
-.fail { background: #c00; padding: 0.2em; color: #fff; }
-.hidden { display: none !important;}
-.input-number{
+progress {
+    width: 100%;
+}
+
+progress:after {
+    content: '%';
+}
+
+.fail {
+    background: #c00;
+    padding: 0.2em;
+    color: #fff;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.input-number {
     margin-bottom: 1em;
 }
-.message{
-    font-size:1em;
-    padding:0.5em;
-}
-.info{
-    color:green;
-}
-.warning{
-    color:red;
-}
-.img-final{
-    width:100%;
-    height:auto;
 
+.message {
+    font-size: 1em;
+    padding: 0.5em;
+}
+
+.info {
+    color: green;
+}
+
+.warning {
+    color: #d3962e;
+}
+
+.img-final {
+    width: 100%;
+    height: auto;
+}
+
+.gifviewer {
+    text-align: center;
+    margin-top: 0.5em;
 }

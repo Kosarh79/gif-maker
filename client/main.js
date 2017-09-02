@@ -9,9 +9,9 @@ Session.set('files', []);
 Session.set('message', {});
 Session.set('disableFileSelection', false);
 Session.set('gif', '');
+Session.set('animating', false);
 
 Template.gifmaker.onRendered(function () {
-
     let holder = document.getElementById('holder');
     holder.ondragover = function () {
         this.className = 'hover';
@@ -22,28 +22,13 @@ Template.gifmaker.onRendered(function () {
         e.preventDefault();
         helper.handleFileAdd(e.dataTransfer.files);
     };
-    let submit = document.getElementById('animate');
-    submit.onclick = ()=>{
-        let durationElem = document.getElementById('duration');
-        //if user doesn't enter any value for frame duration default is 20ms
-        let duration = Number(durationElem.value) || 20;
-        let files = Session.get('files');
-        helper.animate(files, duration, '700');
-    };
-
-    let download = document.getElementById('downloadBtn');
-    download.onclick = ()=>{
-        let gif = Session.get('gif');
-        require("downloadjs")(gif, 'image.gif', 'image/gif');
-    }
 });
 
 Template.gifmaker.events({
     'change input': (ev) => {
         helper.handleFileAdd(ev.target.files);
-    },
+    }
 });
-
 Template.gifmaker.helpers({
     disableFileSelection: () => {
         return Session.get('disableFileSelection');
@@ -64,8 +49,40 @@ Template.message.helpers({
         return Session.get('message');
     }
 });
-// Template.download.helpers({
-//     src: () => {
-//         return Session.get('gif');
-//     }
-// });
+
+Template.animate.helpers({
+    animating: () => {
+        return (Session.get('animating'));
+    }
+});
+Template.animate.events({
+    'click button': () => {
+        let durationElem = document.getElementById('duration');
+        let duration = Number(durationElem.value);
+        if (!duration) {
+            //if user doesn't enter any value for frame duration default is 5ms
+            duration = 300;
+        }
+        else if (duration > 1000) {
+            //set the frame duration to be max 1000 if it is greater than 1000
+            duration = 1000;
+        }
+        duration /= 100; //change it to gifShot standard which 10 is i second
+        let files = Session.get('files');
+        helper.animate(files, duration, '700');
+    }
+});
+
+Template.download.helpers({
+    show: () => {
+        if (Session.get('gif')) {
+            return true;
+        }
+    }
+});
+Template.download.events({
+    'click button': () => {
+        let gif = Session.get('gif');
+        require("downloadjs")(gif, 'image.gif', 'image/gif');
+    }
+});
