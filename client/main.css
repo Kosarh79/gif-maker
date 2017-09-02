@@ -47,6 +47,9 @@ header {
     left: 50%;
     transform: translate(-50%, -50%);
     color: #ffffff;
+    font-size: 2em;
+    width: 100%;
+    text-align: center;
 }
 
 .btn-default.input-file {

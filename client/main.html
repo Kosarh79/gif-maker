@@ -10,7 +10,7 @@
         <div class="col-xs-12">
             {{> gifmaker }}
             <input type="number" id="duration" min="10" max="1000" class="form-control input-number"
-                   placeholder="milliseconds"/>
+                   placeholder="Frame Delay - Milliseconds"/>
             {{> animate}}
             {{> download}}
             {{> message}}
@@ -36,6 +36,7 @@
 <template name="images">
     {{#each images}}
         {{> imgviewer}}
+
     {{/each}}
 </template>
 
