@@ -43,5 +43,6 @@ Tested in the following browsers/versions:
 * Google Chrome 50.0+
 * Internet Explorer 11.0+
 * Firefox 40.0+
-##TODO
+
+## TODO
 gifshot.min.js is being used by meteor-gifmaker package, however it is stored in client/compatibility of the app. There should be a away found to add it to the package.
