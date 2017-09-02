@@ -22,3 +22,4 @@ meteor npm install --save
 ```
 
 ## TODO
+gifshot.min.js being used by this package, is stored in the client/compatibility directory of the actual app using this package. Find a way to add it to the package.
