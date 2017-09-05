@@ -69,7 +69,7 @@ Template.animate.events({
         }
         duration /= 100; //change it to gifShot standard which 10 is i second
         let files = Session.get('files');
-        helper.animate(files, duration, '700');
+        helper.animate(files, duration);
     }
 });
 

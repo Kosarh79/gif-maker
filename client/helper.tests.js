@@ -13,7 +13,7 @@ describe('meteor gif-maker', function () {
                 callback({message: 'File type not accepted'});
             }
         };
-        let mockAnimate = (files, duration, width, callback) => {
+        let mockAnimate = (files, duration, callback) => {
             callback(undefined, 'awesome gif');
         };
         sinon.stub(gifMaker, "readFile", mockReadFile);

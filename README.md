@@ -41,9 +41,7 @@ View it at http://localhost:3000/
 
 ## Browser Compatibility
 Tested in the following browsers/versions:
-* Google Chrome 50.0+
-* Internet Explorer 11.0+
-* Firefox 40.0+
-
-## TODO
-gifshot.min.js in the client/compatibility directory of this app is being used by meteor-gifmaker package. Find a way to add it to the package.
+* Google Chrome 60
+* Internet Explorer 11
+* Firefox 55
+* Opera 47

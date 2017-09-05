@@ -37,6 +37,7 @@ export const helper = {
             return;
         }
         //loop through selected files, read them and add them to Session
+
         _.each(files, (blob) => {
             let notAcceptablefilesNames = '';
             gifMaker.readFile(blob, (err, src) => {
@@ -59,14 +60,16 @@ export const helper = {
             }
         });
     },
-    animate: (files, duration, width) => {
+    animate: (files, duration) => {
         if (!files || files.length < 2) {
             return false;
         }
+        files = files.map((img)=>{
+            return img.src;
+        });
         duration = duration || 5;
-        width = width || 400;
         Session.set('animating', true);
-        gifMaker.animate(files, duration, width, (err, gif) => {
+        gifMaker.animate(files, duration, (err, gif) => {
             Session.set('animating', false);
             if (!err) {
                 Session.set('gif', gif);

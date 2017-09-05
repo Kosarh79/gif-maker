@@ -20,8 +20,6 @@ header {
     position: relative;
     text-align: left;
     background-color: #094578;
-    padding: 1em;
-    font-size: 1.2em;
 }
 
 #holder.hover {
@@ -32,8 +30,8 @@ header {
     margin: 1em;
     position: relative;
     display: inline-block;
-    max-width: 12em;
-    max-height: 12em;
+    max-width: 10em;
+    max-height: 10em;
 }
 
 #holder p {
@@ -57,7 +55,7 @@ header {
     width: 100%;
     border: 0.1em dashed #0c0c0c;
     border-top: none;
-    padding: 0.7em;
+    padding: 1em;
 }
 
 progress {
@@ -96,7 +94,7 @@ progress:after {
 }
 
 .img-final {
-    width: 100%;
+    width: 50%;
     height: auto;
 }
 
