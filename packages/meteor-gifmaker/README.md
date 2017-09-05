@@ -1,7 +1,7 @@
 # meteor-gifmaker package
 ## Description
-A Meteor package with two functions to returns a Dta URL from a blob and an animated gif from blobs
-##Usage
+A Meteor package with two functions to return a Data URL from a blob and an animated gif from blobs
+## Usage
 ```range
 meteor add meteor-gifmaker
 import {gifMaker} from "meteor/meteor-gifmaker";
@@ -10,7 +10,6 @@ To returns a Dta URL from a blob
 ```range
 //@blob Blob object
 //@callback [nodejs callback type] a function that receives err, result
-
 gifmaker.readFile(blob, (err, data_url) => {
     //do something here
 });
