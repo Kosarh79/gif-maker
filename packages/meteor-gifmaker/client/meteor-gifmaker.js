@@ -1,6 +1,8 @@
 let gifshot = require('../lib/gifshot.js');
 export const gifMaker = {
     //get the blub, do type checking and returns data url of the file
+    //@blob Blob object
+    //@callback [nodejs callback type] a function that receives err and result
     readFile: (blob, callback) => {
         //acceptable image types
         let imgMimeType = ['image/jpg', 'image/jpeg', 'image/bmp',
@@ -21,6 +23,9 @@ export const gifMaker = {
             callback({message: 'File type not accepted'});
         }
     },
+    //@files array of images
+    //@duration [optional], 10 = is, default = 5
+    //@callback [nodejs callback type] a function that receives err and result
     animate: (files, duration, callback) => {
         if (typeof callback !== 'function') {
             throw new Error('callback is not a function');
