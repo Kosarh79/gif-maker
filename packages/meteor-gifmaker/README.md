@@ -2,9 +2,9 @@
 ## Description
 returns a data url from blob and returns an animated gif from blobs
 ## Prerequisites
-* Node.js (https://nodejs.org/)
-* npmjs(https://www.npmjs.com)
-* Meteor ()https://www.meteor.com/install)
+* Node.js (https://nodejs.org)
+* npmjs (https://www.npmjs.com)
+* Meteor (https://www.meteor.com/install)
 ### To Run, build and test
 Fork, Clone or download the ZIP
 ## Install dependencies
