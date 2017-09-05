@@ -2,16 +2,16 @@ import {Session} from 'meteor/session';
 import {gifMaker} from "meteor/meteor-gifmaker";
 //add the message either error or info to session
 let addMessage = (message, messageType) => {
-    //let messages = Session.get('messages');
     message = {
         message: message,
         error: messageType === 'error',
         info: messageType === 'info',
     };
-    //  messages.push(message);
     Session.set('message', message);
 };
 export const helper = {
+    //check the max allowed files to be added by user,
+    // add selected files by user to a Session variable files as Blob objects
     handleFileAdd: (files) => {
         let addedFiles = Session.get('files');
         //number of allowed files to be added
@@ -37,8 +37,7 @@ export const helper = {
             return;
         }
         //loop through selected files, read them and add them to Session
-
-        _.each(files, (blob) => {
+        files.forEach((blob) => {
             let notAcceptablefilesNames = '';
             gifMaker.readFile(blob, (err, src) => {
                 if (!err) {
