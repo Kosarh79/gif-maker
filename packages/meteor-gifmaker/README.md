@@ -11,7 +11,7 @@ Import it as a module
 import {gifMaker} from "meteor/meteor-gifmaker";
 
 ```
-To return a Dta URL from a blob
+To return a Data URL from a blob
 ```range
 //@blob Blob object
 //@callback [nodejs callback type] a function that receives err, result
