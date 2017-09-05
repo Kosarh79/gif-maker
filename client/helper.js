@@ -43,10 +43,8 @@ export const helper = {
                 if (!err) {
                     addedFiles.push({src});
                     Session.set('files', addedFiles);
-                    //check number of allowed files
+                    //check the allowed number of files
                     if (addedFiles.length === maxAllowedFiles) {
-                        // addMessage(`Great! you added all allowed files. Please hit Animate to receive your gif!`,
-                        //    'info');
                         Session.set('disableFileSelection', true);
                     }
                 }
