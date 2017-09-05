@@ -8,8 +8,7 @@ meteor add alih:meteor-gifmaker
 ```
 Import it as a module
 ```range
-import {gifMaker} from "meteor/meteor-gifmaker";
-
+import {gifMaker} from "meteor/alih:meteor-gifmaker";
 ```
 To return a Data URL from a blob
 ```range
