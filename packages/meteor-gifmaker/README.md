@@ -11,7 +11,7 @@ Import it as a module
 import {gifMaker} from "meteor/meteor-gifmaker";
 
 ```
-To returns a Dta URL from a blob
+To return a Dta URL from a blob
 ```range
 //@blob Blob object
 //@callback [nodejs callback type] a function that receives err, result
@@ -19,7 +19,7 @@ gifmaker.readFile(blob, (err, data_url) => {
     //do something here
 });
 ```
-To returns an animated gif from blobs
+To return an animated gif from blobs
 ```range
 //@files array of images
 //@duration [optional] 10 = is, default = 5
@@ -32,8 +32,7 @@ gifmaker.animate(files, duration, (err, gif) => {
 * Node.js https://nodejs.org
 * npmjs https://www.npmjs.com
 * Meteor https://www.meteor.com/install
-### To build and test
-Fork, Clone or download the ZIP
+
 ## Install dependencies
 ```range
 meteor npm install --save
