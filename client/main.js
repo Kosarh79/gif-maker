@@ -3,7 +3,7 @@ import {helper} from './helper';
 import './main.html';
 import {Session} from 'meteor/session';
 
-//number of allowed filed to be selected is 5
+//Allowed number of filed to be selected is 5
 Session.set('maxAllowedFiles', 5);
 Session.set('files', []);
 Session.set('message', {});
