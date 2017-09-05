@@ -2,9 +2,9 @@
 ## Description
 Generates an animated gif file from user's uploaded images all in the front end
 ## Prerequisites
-* Node.js (https://nodejs.org)
-* npmjs (https://www.npmjs.com)
-* Meteor (https://www.meteor.com/install)
+* Node.js https://nodejs.org
+* npmjs https://www.npmjs.com
+* Meteor https://www.meteor.com/install
 ## How to get the source code
 Fork, clone or download the ZIP
 ## Install dependencies
