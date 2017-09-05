@@ -1,15 +1,12 @@
 # Gif Maker app
-
 ## Description
 Generates an animated gif file from user's uploaded images all in the front end
-
-## Prerequisite
-   You need to install Meteor to build and run the app
-    https://www.meteor.com/install
-
+## Prerequisites
+* Node.js (https://nodejs.org/)
+* npmjs(https://www.npmjs.com)
+* Meteor ()https://www.meteor.com/install)
 ## How to get the source code
 Fork, clone or download the ZIP
-
 ## Install dependencies
 ```range
 meteor npm install --save
@@ -19,12 +16,9 @@ meteor npm install --save
  meteor
 ```
 View it at http://localhost:3000/
-
 ## Test
  Note: In order to run tests, make sure to run console as administrator.
-
 ### 1- To test the application go to the root
-
 #### 1-1- To run tests in the browser
  ```range
  meteor test --driver-package dispatch:mocha-browser
@@ -38,7 +32,6 @@ View it at http://localhost:3000/
  cd packages/meteor-gifmaker
  meteor test-packages ./ --driver-package practicalmeteor:mocha
 ```
-
 ## Browser Compatibility
 Tested in the following browsers/versions:
 * Google Chrome 60
