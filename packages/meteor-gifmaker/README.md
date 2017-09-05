@@ -1,6 +1,6 @@
 # meteor-gifmaker package
 ## Description
-A Meteor package with two functions to return a Data URL from a blob. and an animated gif from blobs
+A Meteor package with two functions to return a Data URL from a blob, and an animated gif from blobs.
 ## Usage
 Add it to your app
 ```range

@@ -1,6 +1,6 @@
 # Gif Maker app
 ## Description
-Generates an animated gif file from user's uploaded images in frontend
+Generates an animated gif file in frontend from user's uploaded images.
 ## Prerequisites
 * Node.js https://nodejs.org
 * npmjs https://www.npmjs.com
