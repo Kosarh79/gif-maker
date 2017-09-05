@@ -1,4 +1,4 @@
-
+let gifshot = require('../lib/gifshot.js');
 export const gifMaker = {
     //get the blub, do type checking and returns data url of the file
     readFile: (blob, callback) => {
@@ -21,21 +21,19 @@ export const gifMaker = {
             callback({message: 'File type not accepted'});
         }
     },
-    animate: (files, duration, width, callback) => {
-        if(typeof callback !== 'function'){
+    animate: (files, duration, callback) => {
+        if (typeof callback !== 'function') {
             throw new Error('callback is not a function');
         }
-        if(!files || files.length === 0){
+        if (!files || files.length === 0) {
             callback('Error! No files!');
             return;
         }
         duration = duration || 5;
-        width = width || 500;
         gifshot.createGIF({
             'images': files,
-            'gifWidth':width,
-            'frameDuration':duration
-        },function(obj) {
+            'frameDuration': duration
+        }, function (obj) {
             callback(obj.error, obj.image);
         });
     }

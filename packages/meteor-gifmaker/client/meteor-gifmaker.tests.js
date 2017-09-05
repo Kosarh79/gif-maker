@@ -28,7 +28,7 @@ describe('meteor gif-maker package', function () {
         chai.assert.equal(blob.name, "awesome");
     });
     it('animate should return error', function () {
-        gifMaker.animate([],null,null, (err)=>{
+        gifMaker.animate([],null, (err)=>{
             chai.assert.equal(err, 'Error! No files!');
         });
     });

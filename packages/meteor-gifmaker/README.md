@@ -16,10 +16,13 @@ meteor npm install --save
 ```
 
  ## Test
- 2- To test the meteor-gifmaker package
  ```range
  meteor test-packages ./ --driver-package practicalmeteor:mocha
 ```
 
-## TODO
-gifshot.min.js being used by this package, is stored in the client/compatibility directory of the actual app using this package. Find a way to add it to the package.
+## Browser Compatibility
+Tested in the following browsers/versions:
+* Google Chrome 60
+* Internet Explorer 11
+* Firefox 55
+* Opera 47
