@@ -38,6 +38,7 @@ gifmaker.animate(files, duration, (err, gif) => {
 meteor npm install --save
 ```
  ## Test
+ Note: In order to run tests, make sure to run console as administrator.
  ```range
  meteor test-packages ./ --driver-package practicalmeteor:mocha
 ```
