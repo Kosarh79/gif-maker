@@ -33,12 +33,12 @@ gifmaker.animate(files, duration, (err, gif) => {
 * npmjs https://www.npmjs.com
 * Meteor https://www.meteor.com/install
 
-## Install dependencies
+## Install Dependencies
 ```range
 meteor npm install --save
 ```
- ## Test
- Note: In order to run tests, make sure to run console as administrator.
+## Test
+Note: In order to run tests, make sure to run console as administrator.
  ```range
  meteor test-packages ./ --driver-package practicalmeteor:mocha
 ```
