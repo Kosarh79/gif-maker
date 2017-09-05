@@ -4,7 +4,7 @@ A Meteor package with two functions to return a Data URL from a blob, and an ani
 ## Usage
 Add it to your app
 ```range
-meteor add meteor-gifmaker
+meteor add alih:meteor-gifmaker
 ```
 Import it as a module
 ```range

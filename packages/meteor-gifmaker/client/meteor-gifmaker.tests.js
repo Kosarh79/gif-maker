@@ -1,6 +1,5 @@
-//import { Tinytest } from "meteor/tinytest";
-import {gifMaker} from "meteor/meteor-gifmaker";
-import {FileReader}  from "meteor/meteor-gifmaker";
+import {gifMaker} from "meteor/alih:meteor-gifmaker";
+import {FileReader}  from "meteor/alih:meteor-gifmaker";
 import {chai} from 'meteor/practicalmeteor:chai';
 
 describe('meteor gif-maker package', function () {

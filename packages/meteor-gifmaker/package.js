@@ -1,5 +1,5 @@
 Package.describe({
-    name: 'meteor-gifmaker',
+    name: 'alih:meteor-gifmaker',
     version: '0.0.1',
     // Brief, one-line summary of the package.
     summary: 'return data url for an image and create gif of images',
@@ -18,6 +18,6 @@ Package.onUse(function (api) {
 
 Package.onTest(function (api) {
     api.use('ecmascript');
-    api.use('meteor-gifmaker');
+    api.use('alih:meteor-gifmaker');
     api.mainModule('client/meteor-gifmaker.tests.js', 'client');
 });

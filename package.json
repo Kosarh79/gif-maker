@@ -1,5 +1,5 @@
 {
-  "name": "gif-up",
+  "name": "gif-maker",
   "private": true,
   "scripts": {
     "start": "meteor run"

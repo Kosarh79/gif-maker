@@ -1,5 +1,5 @@
 import {Session} from 'meteor/session';
-import {gifMaker} from "meteor/meteor-gifmaker";
+import {gifMaker} from "meteor/alih:meteor-gifmaker";
 //add the message either error or info to session
 let addMessage = (message, messageType) => {
     message = {

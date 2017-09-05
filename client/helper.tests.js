@@ -1,6 +1,6 @@
 import {chai} from 'meteor/practicalmeteor:chai';
 import {helper} from './helper';
-import {gifMaker} from "meteor/meteor-gifmaker";
+import {gifMaker} from "meteor/alih:meteor-gifmaker";
 import {Session} from 'meteor/session';
 
 describe('meteor gif-maker', function () {
